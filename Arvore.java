@@ -283,4 +283,42 @@ class Arvore {
 		}
 	}
 
+		public void imprimirNiveis() {
+	    if (vazia())
+	        return;
+	    
+	    No atual = raiz;
+	    
+	    int contador = 1;
+	    int itensNivel = 0;
+
+	    Fila fila = new Fila();
+	    fila.enfileirar(atual);
+        System.out.println();	    
+	    
+	    while (!fila.vazia()) {
+	        itensNivel = contador;
+	        
+	        while (itensNivel > 0) {
+	            atual = fila.desenFileirar().dado;
+	            contador--;
+	            System.out.print(atual+" ");
+
+    	        if (atual.esquerda != null) {
+    	            fila.enfileirar(atual.esquerda);
+    	            contador++;
+    	        }
+    	        if (atual.direita != null) {
+    	            fila.enfileirar(atual.direita);
+    	            contador++;
+    	        }
+    	        itensNivel--;
+	        }
+	        
+	        System.out.println();
+	        
+	    }
+	    
+	}
+
 }
