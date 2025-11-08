@@ -1,4 +1,4 @@
-class Main {
+class MainArvore {
 	public static void main(String[] args) {
 		//No no1 = new No(5);
 		//System.out.println("no1 -> "+no1.dado);
